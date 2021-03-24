@@ -1,5 +1,5 @@
 ## 虚拟机（Virtual Machine）
-![](./images\Linux\QQ图片20210203121849.png)
+![](./images/Linux/QQ图片20210203121849.png)
 
 ## Linux基本命令行
 ```
