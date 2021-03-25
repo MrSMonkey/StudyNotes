@@ -71,51 +71,77 @@ function ajax () {
 * Either函子实现方式如下<br/>
 ![](./../images/JS/js022.png)
 
-## 函数式编程常用核心概念-IO
+## 函数式编程常用核心函子
+1. Monad函子<br/>
+![](./../images/JS/js030.png)
+2. IO函子<br/>
 ![](./../images/JS/js026.png)
 <br/>
 ![](./../images/JS/js027.png)
 <br/>
 ![](./../images/JS/js028.png)
-<br/>
-![](./../images/JS/js030.png)
+
+3. Monad函子与IO函子的结合运用
 ```
-var Container = function(x) {
-  this._value = x;
-}
-Container.of = x => new Container(x);
-Container.prototype.map = function (f) {
-  return Container.of(f(this._value));
-}
+var fs = require('fs');
+var compose = require('lodash/flowRight'); // 此函数作用见下第二段代码
 
-import 'lodash' from 'lodash';
-var compose = lodash.flowRight; // 调用函数的顺序是从右往左的, 每一个连续调用，传入的参数都是前一个函数返回的结果
-
-class Monad extends Container {
+class Monad {
   join() {
-    return this._value;
+    return this.val();
   }
-  faltMap(f) {
-    return this.map(f).join();
+  flatMap(f) {
+    // f 是一个返回IO函子的函数
+    return this.map(f).join(); // 返回IO函子
   }
 }
+// IO函子用来包裹脏操作
 class IO extends Monad {
-  constructor(value) {
+  constructor(val) {
     super();
-    this._value = value;
+    this.val = val;
+  }
+  // val是最初的脏操作
+  static of (val) {
+    return new IO(val);
   }
   map(f) {
-    return IO.of(compose(f, this._value))
+    return IO.of(compose(f, this.val))
   }
 }
 
-var readFile = (fileName) => {
-  return new IO(() => {
-    return fs.readFileSync(fileName)
+var readFile = function(fileName) {
+  return IO.of(function() {
+    return fs.readFileSync(fileName, 'utf-8')
+  });
+}
+var print = function(x) {
+  console.log('橘子')
+  return IO.of(function() {
+    console.log('苹果');
+    return x + '函数式';
+  });
+}
+var tail = function(x) {
+  console.log(x);
+  return IO.of(function() {
+    console.log('苹果');
+    return x + '京城一等';
   });
 }
 
-readFile('test.txt').faltMap(tail).faltMap(print); //最终转化成 compose(print, tail, readFileSync(fileName))
+const result = readFile('user.txt')
+  .flatMap(print)  // IO.of(function() { console.log('苹果'); return x + '函数式'; });
+  .flatMap(tail); // IO.of(function() { console.log('苹果'); return x + '京城一等'; });
+console.log(result.val());
+```
+* compose函数介绍
+```
+var compose = require('lodash/flowRight');
+const a1 = n => n * n;
+const a2 = (a, b) => a + b;
+const a3 = compose(a1, a2)
+console.log(a3(1,2)) // 输出： 9
 ```
 ![](./../images/JS/js029.png)
 
