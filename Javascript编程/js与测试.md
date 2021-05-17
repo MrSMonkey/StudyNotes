@@ -7,7 +7,7 @@
 npm init
 
 // 第2步
-npm i jasmine-core karma karma-chorme-launcher karma-jasmine  karma-phantomjs-launcher--save-dev
+npm i jasmine-core karma karma-chorme-launcher karma-jasmine karma-phantomjs-launcher --save-dev
 
 // 第3步：编写测试案例-->在项目根目录按如下路径创建文件tests/unit/index.js, tests/unit/index.spec.js
 // index.js

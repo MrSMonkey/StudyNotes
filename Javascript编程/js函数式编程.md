@@ -47,8 +47,6 @@ function ajax () {
 ![](./../images/JS/js013.png)
 * 传统递归<br/>
 ![](./../images/JS/js014.png)
-* 传统递归<br/>
-![](./../images/JS/js014.png)
 * 尾递归优化<br/>
 ![](./../images/JS/js015.png)
 8. 闭包<br/>

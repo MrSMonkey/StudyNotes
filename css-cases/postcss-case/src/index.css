@@ -1,0 +1,23 @@
+@custom-selector :--heading h1,h2,h3,h4,h5;
+
+:root{
+  --mainColor: yellow;
+  --baseFontSize: 1rem;
+}
+.widget-nav {
+    font-size: var(--baseFontSize);
+}
+.widget-nav__item {
+  /* 不能写成&a,中间必须有空格否则编译结果是错的 */
+  & a{ 
+    color: var(--mainColor);
+  }
+
+}
+.widget-nav--active {
+  color: maroon;
+}
+
+:--heading {
+  margin: 0;
+}

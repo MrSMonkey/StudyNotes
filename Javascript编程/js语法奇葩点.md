@@ -25,5 +25,7 @@ const tt = teset()();
 
 ## Promise实现
 ```
-function Pr
+function Promise() {
+  
+}
 ```
