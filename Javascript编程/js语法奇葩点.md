@@ -29,3 +29,6 @@ function Promise() {
   
 }
 ```
+
+## js 原型链图
+![](./../images/JS/js031.jpg)
