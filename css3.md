@@ -178,16 +178,30 @@ div{
 
 1. 为什么要分层<br/>
 ![](./images/css/008.png)<br/> 
-2. SMACSS<br/>
+2. [SMACSS](http://smacss.com/)<br/>
 ![](./images/css/006.png)<br/>
 3. BEM（业内常用）<br/>
 ![](./images/css/007.png)<br/>
+实施原则：
+* 抛开DOM模型，学习创建块。
+* 不要使用ID选择器或标记选择器。
+* 最小化嵌套选择器的数量。
+* 使用CSS类命名约定以避免名称冲突，并尽可能使选择器名称见名之意。
+* 使用块、元素和修饰符。
+* 将块的CSS属性移动到修饰符（如果它们可能被更改）。
+* 组合使用。
+* 将代码划分为小的独立部分，以便于使用单独的块。
+* 复用块
+> [CSS命名规范——BEM思想（非常赞的规范）](https://www.cnblogs.com/dujishi/p/5862911.html)<br>
+[BEM入门）](https://www.w3cplus.com/blog/tags/325.html)<br>
 4. SUIT<br/>
 ![](./images/css/010.png)<br/>
 5. ACSS（业内常用）<br/>
 ![](./images/css/009.png)<br/>
 6. ITCSS<br/>
 ![](./images/css/011.png)<br/>
+> 其他css分成理论博客：<br>
+[css小书](https://www.kancloud.cn/cloud-dirge/css_book/1082706)<br>
 
 
 ## post-css

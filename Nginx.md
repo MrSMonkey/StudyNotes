@@ -7,17 +7,17 @@
 ## Nginx负载均衡的实现
 ![](./images/nginx/003.png)<br/>
 ## HTTP Upstream模块
-1. 什么是HTTP Upstream模块
-![](./images/nginx/004.png)<br/>
+1. 什么是HTTP Upstream模块<br/>
+![](./images/nginx/004.png)
 
-2. ip_hash指令
-![](./images/nginx/005.png)<br/>
+2. ip_hash指令<br/>
+![](./images/nginx/005.png)
 
-3. server指令
-![](./images/nginx/006.png)<br/>
+3. server指令<br/>
+![](./images/nginx/006.png)
 
-3. Upstream指令及相关变量
-![](./images/nginx/007.png)<br/>
+3. Upstream指令及相关变量<br/>
+![](./images/nginx/007.png)
 
 ## NodeJs上线步骤
 ![](./images/nginx/008.png)<br/>
