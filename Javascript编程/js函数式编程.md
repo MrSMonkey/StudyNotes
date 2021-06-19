@@ -8,7 +8,7 @@
 ![](./../images/JS/js004.png)
 2. 函数柯理化<br/>
 ![](./../images/JS/js005.png)
-```
+```javascript
 function foo (p1, p2) {
   this.val = p1 + p2;
 }
@@ -28,7 +28,7 @@ console.log(baz.val);
 ![](./../images/JS/js010.png)
 6. 惰性函数、惰性求值<br/>
 ![](./../images/JS/js011.png)
-```
+```javascript
 // 第二次调用时，ajax的值已不再是函数，不需要再进行if判断
 function ajax () {
   var xhr;
@@ -80,7 +80,7 @@ function ajax () {
 ![](./../images/JS/js028.png)
 
 3. Monad函子与IO函子的结合运用
-```
+```javascript
 var fs = require('fs');
 var compose = require('lodash/flowRight'); // 此函数作用见下第二段代码
 
@@ -134,7 +134,7 @@ const result = readFile('user.txt')
 console.log(result.val());
 ```
 * compose函数介绍
-```
+```javascript
 var compose = require('lodash/flowRight');
 const a1 = n => n * n;
 const a2 = (a, b) => a + b;

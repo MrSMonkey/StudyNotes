@@ -1,7 +1,7 @@
 
 ## callee/caller
 ## eval
-```
+```javascript
 function test() {
   var a = 'hh';
   return function () {
@@ -24,7 +24,7 @@ const tt = teset()();
 3. Reflect
 
 ## Promise实现
-```
+```javascript
 function Promise() {
   
 }
