@@ -79,7 +79,7 @@ function ajax () {
 <br/>
 ![](./../images/JS/js028.png)
 
-3. Monad函子与IO函子的结合运用
+3. Monad函子与IO函子的结合运用<br/>
 ```javascript
 var fs = require('fs');
 var compose = require('lodash/flowRight'); // 此函数作用见下第二段代码
@@ -133,7 +133,7 @@ const result = readFile('user.txt')
   .flatMap(tail); // IO.of(function() { console.log('苹果'); return x + '京城一等'; });
 console.log(result.val());
 ```
-* compose函数介绍
+* compose函数介绍<br/>
 ```javascript
 var compose = require('lodash/flowRight');
 const a1 = n => n * n;
