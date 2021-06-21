@@ -1,0 +1,22 @@
+{
+  "name": "studycases-jest",
+  "version": "1.0.0",
+  "description": "技能学习笔记",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrSMonkey/StudyNotes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrSMonkey/StudyNotes/issues"
+  },
+  "homepage": "https://github.com/MrSMonkey/StudyNotes#readme",
+  "devDependencies": {
+    "jest": "24.8.0"
+  }
+}
