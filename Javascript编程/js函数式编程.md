@@ -134,7 +134,7 @@ const result = readFile('user.txt')
 console.log(result.val());
 ```
 * compose函数介绍<br/>
-```javascript
+```
 var compose = require('lodash/flowRight');
 const a1 = n => n * n;
 const a2 = (a, b) => a + b;
