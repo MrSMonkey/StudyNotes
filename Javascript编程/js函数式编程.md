@@ -73,17 +73,14 @@ function ajax () {
 1. Monad函子<br/>
 ![](./../images/JS/js030.png)
 2. IO函子<br/>
-![](./../images/JS/js026.png)
-<br/>
-![](./../images/JS/js027.png)
-<br/>
-![](./../images/JS/js028.png)
+![](./../images/JS/js026.png)<br/>
+![](./../images/JS/js027.png)<br/>
+![](./../images/JS/js028.png)<br/>
 
 3. Monad函子与IO函子的结合运用<br/>
 ```javascript
 var fs = require('fs');
 var compose = require('lodash/flowRight'); // 此函数作用见下第二段代码
-
 class Monad {
   join() {
     return this.val();
@@ -107,7 +104,6 @@ class IO extends Monad {
     return IO.of(compose(f, this.val))
   }
 }
-
 var readFile = function(fileName) {
   return IO.of(function() {
     return fs.readFileSync(fileName, 'utf-8')
@@ -127,14 +123,13 @@ var tail = function(x) {
     return x + '京城一等';
   });
 }
-
 const result = readFile('user.txt')
   .flatMap(print)  // IO.of(function() { console.log('苹果'); return x + '函数式'; });
   .flatMap(tail); // IO.of(function() { console.log('苹果'); return x + '京城一等'; });
 console.log(result.val());
 ```
 * compose函数介绍<br/>
-```
+```javascript
 var compose = require('lodash/flowRight');
 const a1 = n => n * n;
 const a2 = (a, b) => a + b;
