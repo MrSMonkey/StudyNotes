@@ -6,9 +6,9 @@
 2. <a href="Javascript编程/前端自动化测试" target="_blank">前端自动化测试</a>
 
 ## webpack
-1. <a href="webpack/第1章-第3章" target="_blank">第1章-第3章</a>
-2. <a href="webpack/第4章" target="_blank">第4章</a>
-3. <a href="webpack/5-1~5-5" target="_blank">5-1~5-5</a>
+1. <a href="webpack/第1章-第3章" target="_blank">webpack 入门</a>
+2. <a href="webpack/第4章" target="_blank">webpack中的Tree Shaking、Code splitting、shimming等</a>
+3. <a href="webpack/5-1~5-5" target="_blank">5-1~5-5 library的打包（如何用webpack打包自己造的轮子？）、PWA的打包配置、TypeScript的打包配置、使用webpack实现代理转发、WebpackDevServer解决单页面应用路由问题</a>
 4. <a href="webpack/5-6~5-7 EsLint在Webpack中的配置" target="_blank">5-6~5-7 EsLint在Webpack中的配置</a>
 5. <a href="webpack/5-8~5-12 Webpack性能优化" target="_blank">5-8~5-12 Webpack性能优化</a>
 6. <a href="webpack/5-13 Webpack多页面打包配置" target="_blank">5-13 Webpack多页面打包配置</a>
