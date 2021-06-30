@@ -2,7 +2,7 @@
 1. <a href="Javascript编程/js函数式编程" target="_blank">js函数式编程</a>
 2. <a href="Javascript编程/前端自动化测试" target="_blank">前端自动化测试</a>
 
-## webpack
+## webpack v5
 1. <a href="webpack/第1章-第3章" target="_blank">webpack 入门</a>
 2. <a href="webpack/第4章" target="_blank">webpack中的Tree Shaking、Code splitting、shimming等</a>
 3. <a href="webpack/5-1~5-5" target="_blank">5-1~5-5 library的打包（如何用webpack打包自己造的轮子？）、PWA的打包配置、TypeScript的打包配置、使用webpack实现代理转发、WebpackDevServer解决单页面应用路由问题</a>
