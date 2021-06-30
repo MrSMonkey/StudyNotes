@@ -18,5 +18,4 @@
 
 ## <a href="css" target="_blank">css 点我查看</a>
 ## <a href="Linux" target="_blank">Linux 点我查看</a>
-## <a href="MySQL" target="_blank">MySQL 点我查看</a>
 ## <a href="Nginx" target="_blank">Nginx 点我查看</a>
