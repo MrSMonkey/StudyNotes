@@ -2,7 +2,7 @@
 技能学习笔记
 
 ## javascript编程
-1. <a href="Javascript编程/js函数式编程" target="_blank">js函数式编程</ah>
+1. <a href="Javascript编程/js函数式编程" target="_blank">js函数式编程</a>
 2. <a href="Javascript编程/前端自动化测试" target="_blank">前端自动化测试</a>
 
 ## webpack
