@@ -3,15 +3,12 @@
 ```
 // 安装EsLint
 npm i eslint --save-dev
-
 // 初始化eslint
 npx eslint --init
-
-...
 ```
 
 ## 5-7 Eslint在webpack中的配置（2）
-```
+```javascript
 // 实现webpack自动检测
 // 安装EsLint loader
 npm i eslint-loader --save-dev

@@ -1,11 +1,10 @@
 * 此章节的基础代码是5-12章节
 ## Webpack多页面打包配置
 1. 新建一个list.js文件，代码如下：
-```
+```javascript
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 import _ from 'lodash';
-
 class App extends Component {
   render () {
     return (
@@ -15,12 +14,10 @@ class App extends Component {
     );
   }
 }
-
 ReactDom.render(<App/>, document.getElementById('root'));
-
 ```
 2. 修改webpack.common.js
-```
+```javascript
 ...
 plugins = [
   new HtmlWebpackPlugin({
@@ -44,10 +41,10 @@ module.exports = {
   ...
 }
 ...
+```
 
-```
 3. 第2步已经完成多页面打包配置所有修改，但是有一个缺点:每次新增一个页面都需要手动添加一个new HtmlWebpackPlugin(),于是进行如下修改
-```
+```javascript
 ...
 const makePlugins = (configs) => {
   const plugins = [

@@ -4,7 +4,7 @@
 2. 在尽可能少的模块上应用Loader,比如打包时不需要使用babel-loader对node_modules的js文件再次进行编译；[5-8]
 3. Plugin尽可能精简并确保可靠，即尽可能少使用Plugin。比如在开发环境下不需要对css进行压缩，则不需要配置OptimizeCssAssetsWebpackPlugin；[5-8]
 4. resolve参数合理配置；[5-9]
-```
+```javascript
 // webpack.common.js
 ...
 module.exports = {
@@ -19,9 +19,7 @@ module.exports = {
   ...
 }
 ...
-
 // 在index.js引入文件'./src/child/child.jsx',以下三种方式均有效
-
 import Child from './child/child'; // 方式1
 import Child from './child'; // 方式2
 import Child from 'delllee'; // 方式3
@@ -29,10 +27,9 @@ import Child from 'delllee'; // 方式3
 5. 使用DllPlugin提高打包速度[5-10~5-11]
 目的：第三方模块只打包一次。引入第三方模块的时候,要去使用dll文件引入。
 * 第1步：新建一个webpack.dll.js,并添加如下配置
-```
+```javascript
 const Webpack = require('webpack');
 const path = require('path');
-
 module.exports = {
   mode: 'production',
   entry: {
@@ -51,12 +48,11 @@ module.exports = {
     })
   ]
 };
-
 ```
 * 第2步：运行的打包命令[yarn run build:dll]，将第三方库打包到vendors.dll.js,并生成一个映射文件vendors.manifest.json
 * 第3步: 安装[npm i add-asset-html-webpack-plugin --save]
 * 第4步: 修改webpack.common.js中的plugins配置
-```
+```javascript
 ...
 const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
 const Webpack = require('webpack');
@@ -80,7 +76,6 @@ files.forEach((fileName) => {
     }));
   }
 })
-
 module.exports = {
   ...
   plugins,

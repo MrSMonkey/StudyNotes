@@ -1,14 +1,12 @@
-## 如何编写一个Plugin（6-1 上半节）
+## 如何编写一个Plugin
 plugin 可以再webpack运行到某个时刻的时候，帮你做一些事情，实现原理发布订阅的模式
 1. 编写一个简单的plugin--在代码打包完成，放入dist文件夹之前生成一个copyright.txt文件，一起放入dist文件夹
-```
+```javascript
 // 步骤1.
 npm i webpack webpack-cli -D
-
 // 步骤2. 创建webpack.config.js
 const path = require('path');
 const CopyrightWebpackPlugin = require('./plugins/copyright-webpack-plugin.js');
-
 module.exports = {
   mode: 'development',
   entry: {
@@ -22,7 +20,6 @@ module.exports = {
     filename: '[name].js'
   }
 };
-
 // 步骤3. 创建./plugins/copyright-webpack-plugin.js
 class CopyrightWebpackPlugin {
   // compiler打包中所有的信息，配置信息等
@@ -50,13 +47,11 @@ class CopyrightWebpackPlugin {
   }
 }
 module.exports = CopyrightWebpackPlugin;
-
-
-// 步骤3. 运行npm run build
+// 步骤4. 运行npm run build
 ```
 
 2. webpack打包流程调试
-```
+```javascript
 // 步骤1. 修改package.json
 {
   ...
@@ -68,7 +63,6 @@ module.exports = CopyrightWebpackPlugin;
 }
 // --inspect 开始调试模式
 // --inspect-brk 在webpack执行时，在第一行打一个断点2
-
 // 步骤2. 在copyright-webpack-plugin.js中添加一个断点
 class CopyrightWebpackPlugin {
   // compiler打包中所有的信息，配置信息等
@@ -78,13 +72,10 @@ class CopyrightWebpackPlugin {
   }
 }
 ....
-
 // 步骤3. 
 npm run debug
-
 //  步骤4. 打开浏览器,如下图一,点击红框中的node log
 //  步骤5. 跳过第一个断点，就会来到第二个断点【即copyright-webpack-plugin.js中的断点】,如下图二,这样就可以看见参数中的变量值
-
 ```
 图一<br/>
 ![图一](./images/w001.png)<br/>

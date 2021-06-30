@@ -1,14 +1,13 @@
-## 如何编写一个Loader（6-1 上半节）
+## 如何编写一个Loader
 1. loader本身就是一个函数。
 2. 实现一个简单的loader【6-1 上半节】
-```
+```javascript
 // 步骤1. 编写一个replaceLoader--如果编译过程中遇到一个'dell'字符串，就替换成'dellLee'
 module.exports = function (source) {
   return source.replace('dell', 'dellLee');
 }
 // 步骤2. 引入replaceLoader,创建webpack.config.js
 const path = require('path');
-
 module.exports = {
   mode: 'development',
   entry: {
@@ -33,7 +32,7 @@ module.exports = {
 ```
 
 3. 通过webpack给loader传参【6-1 下半节】
-```
+```javascript
 // 修改webpack.config.js
 ...
 module.exports = {
@@ -56,17 +55,15 @@ module.exports = {
   ....
 }
 // ./loaders/replaceLoader.js
-
 module.exports = function (source) {
   return source.replace('dell', this.query.name);
 }
+```
 
-```
 4. 通过loader-utils插件获取参数【6-1 下半节】
-```
+```javascript
 // 步骤1. 安装loader-utils
 npm i loader-utils --save-dev
-
 // 步骤2. ./loaders/replaceLoader.js
 const loaderUtils = require('loader-utils');
 module.exports = function (source) {
@@ -74,8 +71,9 @@ module.exports = function (source) {
   return source.replace('dell', options.name);
 }
 ```
-4. 通过loader callback【6-1 下半节】:实现编译结果和extra信息的返回
-```
+
+5. 通过loader callback【6-1 下半节】:实现编译结果和extra信息的返回
+```javascript
 // ./loaders/replaceLoader.js
 const loaderUtils = require('loader-utils');
 module.exports = function (source) {
@@ -84,8 +82,9 @@ module.exports = function (source) {
   return this.callback(null, result);
 }
 ```
-5. loader中的异步处理【6-2】
-```
+
+6. loader中的异步处理【6-2】
+```javascript
 // ./loaders/replaceLoader.js
 const loaderUtils = require('loader-utils');
 module.exports = function (source) {
@@ -97,18 +96,17 @@ module.exports = function (source) {
   }, 1000)
 }
 ```
-6. 同时引入多个loader--如果编译过程中遇到一个'dell'字符串，就替换成'lee',再将'lee'替换成'world'
-```
+
+7. 同时引入多个loader--如果编译过程中遇到一个'dell'字符串，就替换成'lee',再将'lee'替换成'world'
+```javascript
 // 步骤1. 将replaceLoader.js 重命名 replaceLoaderAsync.js
 npm i loader-utils --save-dev
-
 // 步骤2. 创建replaceLoader.jsconst loaderUtils = require('loader-utils');
 module.exports = function (source) {
   const options = loaderUtils.getOptions(this);
   const result = source.replace('dell', options.name);
   return this.callback(null, result);
 }
-
 // 步骤3. 修改webpack.config.js
 ...
 module.exports = {
@@ -136,8 +134,8 @@ module.exports = {
 ```
 * 编译过程中，loader的执行顺序是从下到上，从右到左
 
-6. 如何实现如下方式引用loader
-```
+8. 如何实现如下方式引用loader
+```javascript
 // webpack.config.js
 ...
 module.exports = {
@@ -162,8 +160,6 @@ module.exports = {
   },
   ....
 }
-
-
 // webpack.config.js
 ...
 module.exports = {
@@ -173,7 +169,6 @@ module.exports = {
   },
   ....
 }
-
 ```
 
-7. loader用途：多语言替换，异常监控
+9. loader用途：多语言替换，异常监控

@@ -6,28 +6,24 @@ npm init
 npm i @babel/core @babel/parser @babel/preset-env @babel/traverse --save
 ```
 2. 根目录创建文件夹src,并写部分代码
-```
+```javascript
 // src/index.js
 import message from './message.js';
-
 console.log(message);
-
 // src/message.js
 import { word } from './word.js';
-
 export default `say ${word}`;
-
 // src/word.js
 export const word = 'hello';
 ```
+
 3. 编写bundler
-```
+```javascript
 const fs = require('fs');
 const path = require('path');
 const parser = require('@babel/parser');
 const traverse = require('@babel/traverse').default;
 const babel = require('@babel/core');
-
 // 分析module文件的依赖信息，并把module内部的代码编译es5的代码
 const moduleAnalyser = (fileName) => {
   const content = fs.readFileSync(fileName, 'utf-8');
@@ -106,7 +102,7 @@ const code = generateCode('./src/index.js');
 ![3-2](./images/w005.png)<br/>
 
 4. 执行`node bundler.js`,会打印出如下代码, 粘贴复制到浏览器中执行如下图4-1
-```
+```javascript
 (function(graph){
   function require(module) {
     function localRequire(relativePath) { // 编译后的代码require中接手的参数值是相对路径，需转换成绝对路径
