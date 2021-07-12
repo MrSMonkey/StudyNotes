@@ -101,7 +101,8 @@ module.exports = function (source) {
 ```javascript
 // 步骤1. 将replaceLoader.js 重命名 replaceLoaderAsync.js
 npm i loader-utils --save-dev
-// 步骤2. 创建replaceLoader.jsconst loaderUtils = require('loader-utils');
+// 步骤2. 创建replaceLoader.js
+const loaderUtils = require('loader-utils');
 module.exports = function (source) {
   const options = loaderUtils.getOptions(this);
   const result = source.replace('dell', options.name);
@@ -120,7 +121,7 @@ module.exports = {
             loader: path.resolve(__dirname, './loaders/replaceLoader.js'),
           },
           {
-            loader: path.resolve(__dirname, './loaders/replaceLoader.js'),
+            loader: path.resolve(__dirname, './loaders/replaceLoaderAsync.js'),
             options: {
               name: 'lee',
             }
@@ -131,6 +132,8 @@ module.exports = {
   },
   ....
 }
+
+// 从这里我们可以看出loader是从下到上执行的
 ```
 * 编译过程中，loader的执行顺序是从下到上，从右到左
 
