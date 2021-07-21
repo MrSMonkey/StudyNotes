@@ -1,31 +1,18 @@
-function teset() {
-  var a = 'hh';
-  return function () {
-    window.eval('console.log(a)')
-  }
+// implement javascript new keyword
+function mockNew(constructor, ...args) {
+  const temp = new Object();
+  temp.__proto__ = mockNew.prototype;
+  People.call(temp, ...args)
+  console.log()
+  return temp;
 }
-const tt = teset()();
-
-function Promise(fn) {
-  var callback;
-  this.then = function (done) {
-    callback = done;
-  }
-  function resolve(data) {
-    setTimeout(function () {
-      callback(data)
-    },0)
-  }
-  function reject(err) {
-    setTimeout(function () {
-      callback(err)
-    },0)
-  }
-  fn(resolve, reject)
+// example
+function People(name) {
+  this.name = name;
+  this.sayHello = function() {
+    console.log(`hello, I am ${this.name}`);
+  };
 }
-
-new Promise(function (resolve, reject) {
-  resolve(1)
-}).then((data) => {
-  console.log('res', data)
-})
+// should equal to jack = new People('jack')
+const jack = mockNew(People, "jack");
+expect(jack instanceof People === true)
