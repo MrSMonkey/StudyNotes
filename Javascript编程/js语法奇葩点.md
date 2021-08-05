@@ -24,11 +24,22 @@ const tt = teset()();
 3. Reflect
 
 ## Promise实现
+1. 指定回调函数方式更加灵活；
+2. 支持链式调用，解决回调地狱；
+3. 如何中断Promise链式调用，返回一个pending状态的promise,`new Promise(() => {})`；
 ```javascript
 function Promise() {
   
 }
 ```
 
+## 错误类型
+1. Error: 所有错误类型的父类型
+2. ReferenceError: 应用变量不存在
+3. TypeError: 数据类型不正确的错误
+4. RangeError: 数据值不在其所允许的范围内
+5. SyntaxError: 语法错误
+
 ## js 原型链图
-![](./../images/JS/js031.jpg)
+![](./../images/JS/js031.jpg)<br>
+![](./../images/JS/js032.png)<br>
