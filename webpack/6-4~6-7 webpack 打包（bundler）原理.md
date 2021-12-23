@@ -122,4 +122,4 @@ const code = generateCode('./src/index.js');
 ![4-1](./images/w003.png)<br/>
 
 5. 工程项目中使用webpack时，webpack执行过程如下图<br/>
-![4-1](./images/w007.png)<br/>
+![4-1](./images/w007.jpg)<br/>

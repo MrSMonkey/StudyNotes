@@ -15,7 +15,14 @@ https://react.jokcy.me/
 3. window.requestIdleCallback
 
 ## setState
-1. 有时异步（普通使用），有时同步（setTimeout，通过addEventListener绑定的原生时间内部）
+1. 有时异步（普通使用），有时同步（setTimeout，通过addEventListener绑定的原生时间内部）<br/>
+![](../images/react/008.png)<br/>
+* 异步同步的关键在于执行状态更新时，是否处于batchUpdate机制中。<br/>
+![](../images/react/006.png)<br/>
+![](../images/react/007.png)<br/>
+![](../images/react/009.png)<br/>
+![](../images/react/010.png)<br/>
+
 2. 有时合并（对象形式），有时不合并（函数形式）---因为对象可以合并，函数体无法合并<br/>
 ![](../images/react/002.png)<br/>
 ![](../images/react/003.png)<br/>
