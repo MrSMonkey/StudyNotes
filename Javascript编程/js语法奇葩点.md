@@ -41,5 +41,9 @@ function Promise() {
 5. SyntaxError: 语法错误
 
 ## js 原型链图
+
 ![](./../images/JS/js031.jpg)<br>
 ![](./../images/JS/js032.png)<br>
+
+const temp = new object();
+temp.__proto__ === per
